@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -14,11 +15,10 @@ namespace ConsoleApp1
 
         public void Start() {
 
-            if(!IsRunning){
+            if(!IsRunning) {
                 StartTime = DateTime.Now;
                 IsRunning = true;
                 Console.WriteLine($"Run time: {StartTime:HH:MM:SS.fff}");
-                GetIntervalTime();
             }
             else
             {
@@ -39,17 +39,13 @@ namespace ConsoleApp1
 
         }
 
+
+
         public void GetIntervalTime()
         {
-            while (IsRunning)
-            {
                 TimeSpan _timeSpan = DateTime.Now - StartTime;
                 Console.WriteLine($"Elapsed Time:{_timeSpan.TotalSeconds:F2} second");
-                Thread.Sleep(1000);
-            }
-
         }
-
 
     }
 }
