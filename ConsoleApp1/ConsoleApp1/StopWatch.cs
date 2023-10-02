@@ -39,17 +39,13 @@ namespace ConsoleApp1
 
         }
 
+
         public void GetIntervalTime()
         {
-            while (IsRunning)
-            {
                 TimeSpan _timeSpan = DateTime.Now - StartTime;
                 Console.WriteLine($"Elapsed Time:{_timeSpan.TotalSeconds:F2} second");
                 Thread.Sleep(1000);
             }
 
         }
-
-
-    }
 }
